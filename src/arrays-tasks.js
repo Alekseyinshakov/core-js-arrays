@@ -419,8 +419,15 @@ function getElementByIndices(/* arr, indices */) {
  *  getFalsyValuesCount([ -1, 'false', null, 0 ]) => 2
  *  getFalsyValuesCount([ null, undefined, NaN, false, 0, '' ]) => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  let result = 0;
+  arr.map((item) => {
+    if (!item) {
+      result += 1;
+    }
+    return undefined;
+  });
+  return result;
 }
 
 /**
@@ -441,8 +448,14 @@ function getFalsyValuesCount(/* arr */) {
  *                              [0,0,0,1,0],
  *                              [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  return Array(n)
+    .fill(null)
+    .map((item, i) => {
+      const subArr = Array(n).fill(0);
+      subArr[i] = 1;
+      return subArr;
+    });
 }
 
 /**
